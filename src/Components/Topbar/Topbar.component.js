@@ -4,10 +4,10 @@ import { Container } from "react-bootstrap";
 
 const TopBar = ({ openDrawer }) => {
   return (
-    <Navbar bg="dark" expand="lg">
+    <Navbar className="mb-3" bg="primary" variant="dark">
       <Container fluid>
-        <Navbar.Brand href="#home" className="text-white">
-          Company Name
+        <Navbar.Brand href="#home">
+          Task-Tracker
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"

@@ -15,14 +15,14 @@ const TaskModal = (props) => {
     id = null,
     projectId = null,
     taskName = null,
-    comments = null,
+    description = null,
   } = currentTaskDetails || {};
   const projectList = useSelector((state) => state.projectList);
   const [formData, setFormData] = useState({
     ...(id && { id }),
     taskName: (id && taskName) || "",
     projectId: (id && projectId) || "",
-    comments: (id && comments) || "",
+    description: (id && description) || "",
   });
   const [formError, setFromError] = useState({});
 
@@ -42,7 +42,7 @@ const TaskModal = (props) => {
   const submit = () => {
     setFromError({ error: false, field: {} });
     for (var val of Object.keys(formData)) {
-      if (!formData[val] && val !== "comments") {
+      if (!formData[val] && val !== "description") {
         setFromError({ error: true, field: val });
         return false;
       }
@@ -95,16 +95,16 @@ const TaskModal = (props) => {
                 <Alert variant="danger">Please select a project</Alert>
               )}
             </Form.Group>
-            <Form.Group className="mb-3" controlId="comments">
-              <Form.Label>Comments</Form.Label>
-              <FloatingLabel controlId="floatingTextarea2" label="Comments">
+            <Form.Group className="mb-3" controlId="description">
+              <Form.Label>description</Form.Label>
+              <FloatingLabel controlId="floatingTextarea2" label="description">
                 <Form.Control
                   as="textarea"
-                  name="comments"
+                  name="description"
                   placeholder="Leave a comment here"
                   style={{ height: "100px" }}
                   onChange={(e) => handleChange(e)}
-                  defaultValue={comments}
+                  defaultValue={description}
                 />
               </FloatingLabel>
             </Form.Group>
