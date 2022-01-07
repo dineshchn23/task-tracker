@@ -6,11 +6,12 @@ import Sidebar from "./Components/Sidebar/Sidebar.component";
 import Topbar from "./Components/Topbar/Topbar.component";
 import "./App.css";
 import Tasks from "./Pages/Tasks/Tasks.component";
+import Home from "./Pages/Home/Home.component";
 import TaskDetails from "./Pages/TaskDetails/TaskDetails.component";
 import ContactUs from "./Pages/ContactUs/ContactUs.component";
 
 const Dash = (props) => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(true);
+  const [isDrawerOpen, toggleDrawer] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
 
   function handleWindowSizeChange() {
@@ -26,19 +27,15 @@ const Dash = (props) => {
 
   return (
     <>
-      <Topbar openDrawer={() => setIsDrawerOpen(!isDrawerOpen)} />
+      <Topbar toggleDrawer={() => toggleDrawer(!isDrawerOpen)} />
+      <Sidebar isDrawerOpen={isDrawerOpen} toggleDrawer={() => toggleDrawer(!isDrawerOpen)} />
       <Container fluid>
         <Row className="flex-nowrap">
-          {/* <Col
-            xs={12}
-            md={2}
-            id="sidebar-wrapper"
-            className={`${isDrawerOpen ? "d-block" : "d-none"}`}
-          >
-            <Sidebar isDrawerOpen={isDrawerOpen} />
-          </Col> */}
           <Col xs={12} id="page-content-wrapper">
             <Switch>
+              <Route exact path="/home">
+                <Home />
+              </Route>
               <Route exact path="/tasks">
                 <Tasks />
               </Route>

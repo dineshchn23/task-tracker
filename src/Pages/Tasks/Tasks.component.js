@@ -81,7 +81,7 @@ const Tasks = (props) => {
   return (
     <>
       <Row>
-        <Col xs={3}>
+        <Col xs={12} md={3}>
           <h3>Manage Tasks</h3>
           <Button
             className="mb-sm-3 full-width"
@@ -97,21 +97,21 @@ const Tasks = (props) => {
           <hr></hr>
           <div>
             <p>Available filters</p>
-            <Button className="mx-2" variant="outline-secondary">
+            <Button size="sm" className="mx-2" variant="outline-secondary">
               Priority <Badge bg="secondary">9</Badge>
               <span className="visually-hidden">unread messages</span>
             </Button>
-            <Button className="mx-2" variant="outline-secondary">
+            <Button size="sm" className="mx-2" variant="outline-secondary">
               Active <Badge bg="secondary">9</Badge>
               <span className="visually-hidden">unread messages</span>
             </Button>
-            <Button className="mx-2" variant="outline-secondary">
+            <Button size="sm" className="mx-2" variant="outline-secondary">
               Closed <Badge bg="secondary">9</Badge>
               <span className="visually-hidden">unread messages</span>
             </Button>
           </div>
         </Col>
-        <Col xs={9} id="tasks">
+        <Col xs={12} md={9} id="tasks">
           <div className="table-container">
             <TaskList
               taskList={taskList}

@@ -1,18 +1,15 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Button, Nav, Navbar } from "react-bootstrap";
 import { Container } from "react-bootstrap";
 
-const TopBar = ({ openDrawer }) => {
+const TopBar = ({ toggleDrawer }) => {
   return (
     <Navbar className="mb-3" bg="primary" variant="dark">
       <Container fluid>
-        <Navbar.Brand href="#home">
-          Task-Tracker
-        </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="basic-navbar-nav"
-          onClick={() => openDrawer()}
-        />
+        <Button size="lg" onClick={() => toggleDrawer()}>
+          <i class="bi bi-list"></i>
+        </Button>
+        <Navbar.Brand href="/home">Task-Tracker</Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto"></Nav>
           <span className="text-white">
