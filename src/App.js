@@ -42,7 +42,7 @@ const Dash = (props) => {
               <Route path="/home">
                 <Home />
               </Route>
-              <Route path="/tasks">
+              <Route exact path="/tasks">
                 <Tasks />
               </Route>
               <Route path="/tasks/:id">
