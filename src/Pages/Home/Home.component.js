@@ -12,7 +12,7 @@ import {
   Image,
 } from "react-bootstrap";
 import "./Home.style.css";
-import TaskTypesLineChart from "../../Components/DashboardCharts/TaskTypesDoughnutChart.component";
+import TaskTypesDoughnutChart from "../../Components/DashboardCharts/TaskTypesDoughnutChart.component";
 import TaskPriorityBarChart from "../../Components/DashboardCharts/TaskPriorityBarChart.component";
 
 const data = {
@@ -91,7 +91,7 @@ const Home = (props) => {
       <Col xs={12} md={9}>
         <Row>
           <Col xs={12} md={4} id="tasks">
-            <TaskTypesLineChart />
+            <TaskTypesDoughnutChart />
           </Col>
           <Col xs={12} md={8} id="tasks">
             <TaskPriorityBarChart />

@@ -28,15 +28,21 @@ const Dash = (props) => {
   return (
     <>
       <Topbar toggleDrawer={() => toggleDrawer(!isDrawerOpen)} />
-      <Sidebar isDrawerOpen={isDrawerOpen} toggleDrawer={() => toggleDrawer(!isDrawerOpen)} />
+      <Sidebar
+        isDrawerOpen={isDrawerOpen}
+        toggleDrawer={() => toggleDrawer(!isDrawerOpen)}
+      />
       <Container fluid>
         <Row className="flex-nowrap">
           <Col xs={12} id="page-content-wrapper">
             <Switch>
-              <Route exact path="/home">
+              <Route exact path="/">
                 <Home />
               </Route>
-              <Route exact path="/tasks">
+              <Route path="/home">
+                <Home />
+              </Route>
+              <Route path="/tasks">
                 <Tasks />
               </Route>
               <Route path="/tasks/:id">
